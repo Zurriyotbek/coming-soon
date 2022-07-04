@@ -1,0 +1,210 @@
+.input {
+  margin-bottom: 64px;
+  position: relative;
+  padding-left: 33px;
+  width: 643px;
+  height: 96px;
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 32px;
+
+  &__dark {
+    background: rgba(255, 255, 255, 0.05);
+  }
+
+  &__placeholder {
+    height: 100%;
+    outline: none;
+    border: none;
+    background-color: transparent;
+    border-radius: 32px;
+    font-size: 24px;
+    width: 60%;
+    &::placeholder {
+      font-style: normal;
+      font-weight: 400;
+      font-size: 24px;
+      line-height: 100%;
+      color: rgba(0, 0, 0, 0.6);
+    }
+
+    &__dark {
+      color: $bg-color-light;
+
+      &::placeholder {
+        color: rgba(255, 255, 255, 0.6);
+      }
+    }
+  }
+
+  &__button {
+    padding: 36px 52px;
+    position: absolute;
+    right: 0;
+    border: none;
+    border-radius: 32px;
+    background-color: #000;
+    color: $bg-color-light;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 100%;
+    cursor: pointer;
+    max-height: 100%;
+    min-width: 212px;
+    transition: width 0.4s ease-in-out;
+
+    &:hover {
+      background-color: rgb(0, 0, 0, 0.7);
+    }
+
+    &__dark {
+      background-color: $bg-color-light;
+      color: $bg-color-dark;
+      &:hover {
+        background-color: rgb(255, 255, 255, 0.7);
+      }
+    }
+
+    &__loading {
+      padding: 0;
+      top: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      width: 212px;
+      background-color: gray;
+      cursor: not-allowed;
+      &:hover {
+        background-color: gray;
+      }
+    }
+
+    &__sent {
+      width: 100%;
+      z-index: 10;
+      cursor: default;
+      font-weight: 700;
+      font-size: 21px;
+      line-height: 100%;
+      &:hover {
+        background-color: $bg-color-light;
+      }
+
+      &__light {
+        background-color: $bg-color-dark;
+
+        &:hover {
+          background-color: $bg-color-dark;
+        }
+      }
+    }
+  }
+}
+
+/////// Media Queries ///////
+
+@media screen and (max-width: 750px) {
+  .input {
+    width: 80%;
+
+    &__placeholder {
+      border-radius: 32px;
+      font-size: 24px;
+      width: 50%;
+
+      &::placeholder {
+        font-size: 20px;
+      }
+    }
+
+    &__button {
+      font-weight: 600;
+      font-size: 22px;
+      line-height: 100%;
+      cursor: pointer;
+      height: 100%;
+    }
+  }
+}
+
+@media screen and (max-width: 630px) {
+  .input {
+    height: 80px;
+
+    &__placeholder {
+      width: 50%;
+
+      &::placeholder {
+        font-size: 17px;
+      }
+    }
+    &__button {
+      padding: 20px 40px;
+      font-size: 17px;
+      min-width: 150px;
+    }
+  }
+}
+@media screen and (max-width: 500px) {
+  .input {
+    height: 65px;
+    padding-left: 20px;
+
+    &__placeholder {
+      width: 50%;
+
+      &::placeholder {
+        font-size: 14px;
+      }
+    }
+    &__button {
+      padding: 15px 20px;
+      font-size: 16px;
+      min-width: 120px;
+    }
+  }
+}
+@media screen and (max-width: 400px) {
+  .input {
+    &__placeholder {
+      width: 40%;
+    }
+    &__button {
+      padding: 7px 15px;
+      font-size: 14px;
+      min-width: 100px;
+    }
+  }
+}
+
+///// Loader ///////////
+
+.loader {
+  margin: 0;
+  padding: 0;
+  border: 5px solid $color-brand;
+  border-radius: 50%;
+  border-top: 5px solid transparent;
+  width: 35px;
+  min-height: 35px;
+  -webkit-animation: spin 1s linear infinite;
+  animation: spin 1s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

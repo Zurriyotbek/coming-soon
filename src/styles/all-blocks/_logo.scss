@@ -1,0 +1,34 @@
+.site-logo {
+  margin-bottom: 64px;
+  padding: 18px 26px;
+  background-color: $color-brand;
+  border-radius: 20px;
+  color: $bg-color-dark;
+  width: 221px;
+  font-size: 43px;
+  line-height: 100%;
+}
+
+/////// Media Queries ///////
+
+@media screen and (max-width: 580px) {
+  .site-logo {
+    margin-bottom: 50px;
+    padding: 18px 26px;
+    background-color: $color-brand;
+    border-radius: 20px;
+    color: $bg-color-dark;
+    width: 190px;
+    font-size: 38px;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .site-logo {
+    margin-bottom: 40px;
+    padding: 10px 16px;
+    color: $bg-color-dark;
+    width: 150px;
+    font-size: 30px;
+  }
+}
